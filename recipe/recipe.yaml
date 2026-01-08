@@ -1,5 +1,5 @@
 context:
-  version: 2.12.20
+  version: 2.12.21
 
 package:
   name: scala2
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/scala/scala/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 3ee24d57bfda0f57d32ba46cb6db8ccdbea359b9ffa50e854c8138e477f3ad22
+    sha256: 2f77be2791275ba2b5d5309e8222e38d613b72bbd317981ca64f64c991257a1d
 
 build:
   number: 0
@@ -20,7 +20,8 @@ requirements:
     - sed
     - openjdk =11
   run:
-    - openjdk >=11,<=21
+    # from https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html
+    - openjdk >=11,<=25
 
 tests:
   - script:
